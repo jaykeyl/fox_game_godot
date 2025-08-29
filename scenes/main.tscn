@@ -850,8 +850,9 @@ tile_set = SubResource("TileSet_5wayr")
 tile_map_data = PackedByteArray("AAD/////AQADAAAAAAD//wAAAQAEAAMAAAAAAAAAAQABAAMAAAABAAAAAQAHAAAAAAABAAEAAQAEAAMAAAACAAEAAQAHAAAAAAACAAIAAQADAAIAAAAEAAIAAQADAAAAAAAEAAMAAQAEAAMAAAAFAAMAAQACAAMAAAAJAAAAAQACAAIAAAAIAAAAAQAAAAIAAAAIAP//AQAAAAAAAAAJAP//AQACAAAAAAAJAAQAAQAFAAAAAAAJAAUAAQACAAIAAAAIAAUAAQAAAAIAAAAIAAQAAQAAAAAAAAAKAAQAAQACAAMAAAA=")
 tile_set = SubResource("TileSet_mu047")
 
-[node name="Player" parent="." instance=ExtResource("2_k06w8")]
+[node name="Player" parent="." node_paths=PackedStringArray("score") instance=ExtResource("2_k06w8")]
 position = Vector2(34, 63)
+score = NodePath("../Score")
 
 [node name="Bush" parent="." instance=ExtResource("2_bvh6e")]
 position = Vector2(111, 53)
@@ -881,3 +882,8 @@ position = Vector2(136, 18)
 [node name="Bat4" parent="Enemies" instance=ExtResource("7_8kxu3")]
 position = Vector2(176, 165)
 target = Vector2(100, 50)
+
+[node name="Score" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "HP: 100"
