@@ -15,7 +15,7 @@ enum {
 # variable de estado actual
 var state = MOVE
 @export var hp = 100
-
+@export var score : Label
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = $AnimationTree.get("parameters/playback")
 
@@ -62,3 +62,8 @@ func attack_anim_finished():
 func _on_hurt_box_area_entered(area: Area2D) -> void:
 	print("OUCH")
 	hp -= 10
+	score.text = "HP: " + str(hp)
+	
+	if hp <= 0:
+		print("moriste")
+		get_tree().quit()
